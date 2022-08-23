@@ -1,0 +1,50 @@
+/** Product list;
+Beats Powerbeats ($60, 4)
+Beats Studio Beats ($40,5)
+Samsung Galaxy Note 20 ($2500, 2)
+Pixel 6a ($2300, 1)
+Charging Dock ($83, 6)
+Headset ($82, 3)
+Monitors ($250, 7)
+Desktop Computer ($500, 8)
+Laptop ($800, 9)
+Over the ear headphones ($80, 10)
+Desk Phone ($80, 1)
+Wires ($15, 0)
+Laptop stand ($50, 12)
+Webcam ($45, 1)
+Rocketbook ($45, 5)
+**/
+
+CREATE TABLE product_list (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, number_sold INTEGER);
+INSERT INTO product_list VALUES (1, "Beats Powerbeats", 60, 4);
+INSERT INTO product_list VALUES (2, "Beats Studio Beats", 60, 4);
+INSERT INTO product_list VALUES (3, "Samsung Galaxy Note 20", 2500, 2);
+INSERT INTO product_list VALUES (4, "Pixel 6a", 2300, 1);
+INSERT INTO product_list VALUES (5, "Charging dock", 83, 6);
+INSERT INTO product_list VALUES (6, "Headset", 82, 3);
+INSERT INTO product_list VALUES (7, "Monitors", 250, 7);
+INSERT INTO product_list VALUES (8, "Desktop Computer", 500, 8);
+INSERT INTO product_list VALUES (9, "Laptop", 800, 9);
+INSERT INTO product_list VALUES (10, "Over the ear headphones", 80, 10);
+INSERT INTO product_list VALUES (11, "Desk phone", 80, 1);
+INSERT INTO product_list VALUES (12, "Wires", 45, 0);
+INSERT INTO product_list VALUES (13, "Laptop Stand", 50, 12);
+INSERT INTO product_list VALUES (14, "Webcam", 45, 1);
+INSERT INTO product_list VALUES (15, "Rocketbook", 45, 5);
+
+SELECT * FROM product_list ORDER BY price;
+
+--display the database ordered by price. 
+SELECT * FROM product_list
+ORDER BY price desc; 
+
+--what is the avg price of items in the bulk section? 
+SELECT AVG(price) "avg bulk item price"
+FROM product_list; 
+
+--what are the most 5 popular items? 
+SELECT name, price, number_sold
+FROM product_list
+order by number_sold desc
+limit 5;
